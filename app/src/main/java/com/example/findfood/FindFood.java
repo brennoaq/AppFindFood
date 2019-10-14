@@ -1,7 +1,6 @@
 package com.example.findfood;
 
 import android.app.Application;
-import android.os.Trace;
 
 
 

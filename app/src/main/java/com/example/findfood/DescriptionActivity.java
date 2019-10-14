@@ -1,17 +1,10 @@
 package com.example.findfood;
 
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -31,7 +24,7 @@ public class DescriptionActivity extends AppCompatActivity {
 
     @OnClick(R.id.maps)
     public void goMaps(){
-        Intent intent = new Intent(this, MapsFragment.class);
+        Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
     }
 

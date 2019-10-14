@@ -27,113 +27,15 @@
         </ImageView>
 
 
-        <LinearLayout
-            android:id="@+id/ll_mcdonalds"
+        <ListView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/borda_mcdonalds"
-            android:orientation="horizontal"
+            android:layout_height="match_parent"
+            android:id="@+id/dashRestaurante"
             android:padding="5dp"
-            android:layout_margin="10dp"
-            android:onClick="descriptionMcdonalds">
+            android:divider="@null"
+            android:dividerHeight="10dp">
 
-            <ImageView
-                android:id="@+id/im_mcdonalds"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:paddingStart="10dp"
-                app:srcCompat="@mipmap/ic_mcdonalds_foreground"
-                android:onClick="descriptionMcdonalds">
-
-            </ImageView>
-
-            <TextView
-                android:id="@+id/tv_mcdonalds"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="Mc Donald`s"
-                android:textColor="#FFC72C"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                android:onClick="descriptionMcdonalds">
-
-            </TextView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_diRoma"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/borda_diroma"
-            android:orientation="horizontal"
-            android:padding="5dp"
-            android:layout_margin="10dp"
-            android:onClick="descriptionDiRoma">
-
-            <ImageView
-                android:id="@+id/im_diRoma"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/borda_diroma"
-                app:srcCompat="@mipmap/ic_diroma_foreground"
-                android:onClick="descriptionDiRoma">
-
-            </ImageView>
-
-            <TextView
-                android:id="@+id/tv_diRoma"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="Di Roma"
-                android:textColor="#231f20"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                android:onClick="descriptionDiRoma">
-
-            </TextView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_moochacho"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/borda_moochacho"
-            android:orientation="horizontal"
-            android:padding="5dp"
-            android:layout_margin="10dp"
-            android:onClick="descriptionMoochacho">
-
-            <ImageView
-                android:id="@+id/im_moochacho"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/borda_moochacho"
-                app:srcCompat="@mipmap/ic_moochacho_foreground"
-                android:onClick="descriptionMoochacho">
-
-            </ImageView>
-
-            <TextView
-                android:id="@+id/tv_moochacho"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="Moochacho"
-                android:textColor="#000000"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                android:onClick="descriptionMoochacho">
-
-            </TextView>
-
-        </LinearLayout>
+        </ListView>
     </LinearLayout>
 
 </LinearLayout>

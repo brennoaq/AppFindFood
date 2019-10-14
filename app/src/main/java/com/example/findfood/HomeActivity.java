@@ -1,16 +1,30 @@
 package com.example.findfood;
 
-
-import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ListView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 
 public class HomeActivity extends AppCompatActivity {
+
+    ArrayList<Restaurante> restaurantes = new ArrayList<>();
+    HomeAdapter adapter;
+
+    @BindView(R.id.dashRestaurante)
+    ListView dashRestaurante;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,22 +33,27 @@ public class HomeActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
+        FirebaseDatabase.getInstance().getReference().child("restaurantes").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    restaurantes.clear();
+
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        restaurantes.add(snapshot.getValue(Restaurante.class));
+                    }
+                    adapter = new HomeAdapter(restaurantes, HomeActivity.this);
+                    dashRestaurante.setAdapter(adapter);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
-    @OnClick({R.id.im_mcdonalds,R.id.ll_mcdonalds,R.id.tv_mcdonalds})
-    public void goMcdonalds(){
-        Intent intent = new Intent(this, DescriptionActivity.class);
-        startActivity(intent);
-    }
-    @OnClick({R.id.im_diRoma,R.id.ll_diRoma,R.id.tv_diRoma})
-    public void godiroma(){
-        Intent intent = new Intent(this, DescriptionActivity.class);
-        startActivity(intent);
-    }
-    @OnClick({R.id.im_moochacho,R.id.ll_moochacho,R.id.tv_moochacho})
-    public void gomoochacho(){
-        Intent intent = new Intent(this, DescriptionActivity.class);
-        startActivity(intent);
-    }
 
 }

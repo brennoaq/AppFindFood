@@ -42,7 +42,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:paddingStart="10dp"
-                app:srcCompat="@mipmap/ic_mcdonalds"
+                app:srcCompat="@mipmap/ic_mcdonalds_foreground"
                 android:onClick="descriptionMcdonalds">
 
             </ImageView>
@@ -78,7 +78,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="@drawable/borda_diroma"
-                app:srcCompat="@mipmap/ic_diRoma_foreground"
+                app:srcCompat="@mipmap/ic_diroma_foreground"
                 android:onClick="descriptionDiRoma">
 
             </ImageView>
